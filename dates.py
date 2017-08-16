@@ -1,7 +1,7 @@
 from flask import Flask, flash, request, render_template
 from wtforms import Form, StringField, DateTimeField, SelectField, SubmitField,validators, ValidationError
 from os import urandom
-from datetime import datetime
+from datetime import datetime, timedelta
 import pytz
 from datecalc import DateCalc
 
@@ -40,7 +40,7 @@ def handle_dates():
 	myform.zone1.choices = myform.zone2.choices = zones
 	if request.method=='GET':
 		myform.dt1.data = datetime.strftime(datetime.now(), FMT)
-		myform.dt2.data = datetime.strftime(datetime.now(), FMT)
+		myform.dt2.data = datetime.strftime(datetime.now()+timedelta(1), FMT)
 	if request.method=='POST' and myform.validate():
 		try:
 			#DateCalc class does all date calculations

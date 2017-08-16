@@ -51,10 +51,10 @@ class DateCalc:
 		elif self.action == 's':
 			return self.delta.total_seconds()
 		elif self.action == 'm':
-			return self.delta.total_seconds()/60
+			return self.delta.total_seconds()/60.0
 		elif self.action == 'h':
-			return self.delta.total_seconds()/3600
+			return self.delta.total_seconds()/3600.0
 		elif self.action == 'y':
 			#secs in 1 year = secs in 1 hour * 24 hours * 365 days
-			return self.delta.total_seconds()/(3600*24*365)
+			return self.delta.total_seconds()/(3600.0*24*365)
 		return "Something bad has happened"

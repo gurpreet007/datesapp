@@ -38,6 +38,9 @@ def handle_dates():
 	zones = [('UTC','UTC')] + [(z,z) for z in pytz.common_timezones if not z=='UTC']
 	#fill up zone1 and zone2 with our collected timezones
 	myform.zone1.choices = myform.zone2.choices = zones
+	if request.method=='GET':
+		myform.dt1.data = datetime.strftime(datetime.now(), FMT)
+		myform.dt2.data = datetime.strftime(datetime.now(), FMT)
 	if request.method=='POST' and myform.validate():
 		try:
 			#DateCalc class does all date calculations

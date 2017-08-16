@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Dates Calculator</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+	<h2>Calculate DateTime</h2>
+	<form action="{{ url_for('handle_dates') }}" method="post">
+		<p>
+		{{ form.dt1.label }}
+		{{ form.dt1(placeholder=form.fmt) }}
+		{{ form.zone1.label }}
+		{{ form.zone1 }}
+ 		{% for message in form.dt1.errors %}
+    		<div class="flash">{{ message }}</div>
+  		{% endfor %}
+		</p>
+		<p>
+		{{ form.dt2.label }}
+		{{ form.dt2(placeholder=form.fmt) }}
+		{{ form.zone2.label }}
+		{{ form.zone2 }}
+ 		{% for message in form.dt2.errors %}
+    		<div class="flash">{{ message }}</div>
+  		{% endfor %}
+		</p>
+		<p>
+		{{ form.action.label }}
+		{{ form.action }}
+		</p>
+		<p>
+		{{ form.submit }}
+		</p>
+		<p>
+		{% if form.msg!='' %}
+			<div class="msg"> {{ form.msg }} </div>
+		{% endif %}
+		</p>
+	</form>
+</body>
+</html>

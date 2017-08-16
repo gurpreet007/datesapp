@@ -1,0 +1,18 @@
+/* Message flashing */
+input[type=submit] {
+  padding: 80px;
+  width=400px;
+  height=80px;
+  box-sizing: content-box;
+}
+.flash {
+  background-color: #FBB0B0;
+  padding: 10px;
+  width: 400px;
+}
+
+.msg {
+  background-color: #CCCCCC;
+  padding: 10px;
+  width: 400px;
+}

@@ -1,10 +1,8 @@
-/* Message flashing */
-input[type=submit] {
-  padding: 80px;
-  width=400px;
-  height=80px;
-  box-sizing: content-box;
+input[type="submit"] {
+	height: 30px;
+	width: 100px;
 }
+/* Message flashing */
 .flash {
   background-color: #FBB0B0;
   padding: 10px;
